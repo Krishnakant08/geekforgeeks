@@ -1,0 +1,16 @@
+ int getMiddle(Node *head)
+    {
+        Node *temp=head;
+        Node *curr=head;
+        int count=0;
+        while(temp!=NULL){
+            temp=temp->next;
+            count++;
+        }
+        int kk=count/2;
+        while(kk!=0){
+            curr=curr->next;
+            kk--;
+        }
+        return curr->data;
+    }
