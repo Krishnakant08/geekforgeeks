@@ -1,0 +1,32 @@
+string removeDuplicates(string str) {
+	    
+	    
+	    string result;
+	   
+	   int A[26]={0};
+	   int B[26]={0};
+	    
+	    int n=str.size();
+	    for(int i=0;i<n;i++){
+	        if(str[i]>='a'  &&  str[i]<='z'){
+	        int num=str[i]-'a';
+	        A[num]++;
+	        
+	        if(A[num]==1){
+	            result.push_back(str[i]);
+	        }
+	        }
+	        else if(str[i]>='A'  &&  str[i]<='Z'){
+	            int num=str[i]-'A';
+	            B[num]++;
+	            
+	            if(B[num]==1){
+	                result.push_back(str[i]);
+	            }
+	        }
+	        
+	        
+	        
+	    }
+	    return result;
+	}
