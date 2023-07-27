@@ -1,0 +1,28 @@
+ int lenOfLongSubarr(int A[],  int N, int K) 
+    { 
+        map<int,int>kk;
+        
+      int sum=0;
+      int result=0;
+      
+      for(int i=0;i<N;i++){
+          sum+=A[i];
+          
+          if(sum==K){
+              result=max(result,i+1);
+          }
+          
+          int rem=sum-K;
+          if(kk.find(rem)!=kk.end()){
+              int len=i-kk[rem];
+              result=max(len,result);
+              
+          }
+          
+          if(kk.find(sum)==kk.end()){
+              kk[sum]=i;
+          }
+      }
+      return result;
+      
+    } 
